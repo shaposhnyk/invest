@@ -9,18 +9,11 @@
       "id" : "1",
       "status" : "Accepted",
       "title" : "Record architecture decisions"
-    }, {
-      "content" : "# 2. Use Event Sourcing to improve consitency\n\nDate: 2024-05-11\n\n## Status\n\nAccepted\n\n## Context\n\nThe issue motivating this decision, and any context that influences or constrains the decision.\n\n## Decision\n\nThe change that we're proposing or have agreed to implement.\n\n## Consequences\n\nWhat becomes easier or more difficult to do and any risks introduced by the change that will need to be mitigated.\n",
-      "date" : "2024-05-11T00:00:00Z",
-      "format" : "Markdown",
-      "id" : "2",
-      "status" : "Accepted",
-      "title" : "Use Event Sourcing to improve consitency"
     } ]
   },
   "id" : 1,
   "lastModifiedAgent" : "structurizr-javascript",
-  "lastModifiedDate" : "2024-05-12T08:45:05Z",
+  "lastModifiedDate" : "2024-05-13T05:44:33Z",
   "model" : {
     "people" : [ {
       "description" : "Mobile Client",
@@ -31,29 +24,20 @@
         "structurizr.dsl.identifier" : "user"
       },
       "relationships" : [ {
-        "description" : "orders/list",
-        "destinationId" : "7",
-        "id" : "10",
+        "description" : "orders/submit(UID)",
+        "destinationId" : "5",
+        "id" : "6",
         "properties" : {
-          "structurizr.dsl.identifier" : "eed38587-a964-4883-bc4f-906c96d752d7"
+          "structurizr.dsl.identifier" : "27fa5a50-785a-4d36-8454-cb1f382890a2"
         },
         "sourceId" : "1",
         "tags" : "Relationship"
-      }, {
-        "description" : "orders/list",
-        "destinationId" : "6",
-        "id" : "11",
-        "linkedRelationshipId" : "10",
-        "sourceId" : "1"
       }, {
         "description" : "orders/submit(UID)",
-        "destinationId" : "7",
-        "id" : "12",
-        "properties" : {
-          "structurizr.dsl.identifier" : "a190ca6e-050f-46cc-aef2-e0c7b0befdde"
-        },
-        "sourceId" : "1",
-        "tags" : "Relationship"
+        "destinationId" : "4",
+        "id" : "7",
+        "linkedRelationshipId" : "6",
+        "sourceId" : "1"
       } ],
       "tags" : "Element,Person"
     } ],
@@ -67,16 +51,16 @@
       },
       "relationships" : [ {
         "description" : "orders/onComplete(UID)",
-        "destinationId" : "14",
+        "destinationId" : "5",
         "id" : "28",
         "properties" : {
-          "structurizr.dsl.identifier" : "6b48df20-14af-44b2-beae-4d3a82526454"
+          "structurizr.dsl.identifier" : "18178d2a-f018-40f8-97a8-d984b374a8f1"
         },
         "sourceId" : "2",
         "tags" : "Relationship"
       }, {
         "description" : "orders/onComplete(UID)",
-        "destinationId" : "13",
+        "destinationId" : "4",
         "id" : "29",
         "linkedRelationshipId" : "28",
         "sourceId" : "2"
@@ -86,15 +70,6 @@
       "documentation" : { },
       "id" : "3",
       "location" : "Unspecified",
-      "name" : "Portfolio Management System",
-      "properties" : {
-        "structurizr.dsl.identifier" : "pms"
-      },
-      "tags" : "Element,Software System"
-    }, {
-      "documentation" : { },
-      "id" : "4",
-      "location" : "Unspecified",
       "name" : "Firebase Cloud Messaging",
       "properties" : {
         "structurizr.dsl.identifier" : "fcm"
@@ -102,126 +77,125 @@
       "relationships" : [ {
         "description" : "notifies changes",
         "destinationId" : "1",
-        "id" : "36",
+        "id" : "34",
         "properties" : {
-          "structurizr.dsl.identifier" : "8c8ab2ca-2211-4df2-98b0-8022c2efc91c"
+          "structurizr.dsl.identifier" : "e01f693b-7830-4a24-a369-6d38b1984922"
         },
-        "sourceId" : "4",
-        "tags" : "Relationship"
-      } ],
-      "tags" : "Element,Software System"
-    }, {
-      "documentation" : { },
-      "id" : "5",
-      "location" : "Unspecified",
-      "name" : "Message Broker",
-      "properties" : {
-        "structurizr.dsl.identifier" : "kafka"
-      },
-      "relationships" : [ {
-        "description" : "consumes orders",
-        "destinationId" : "15",
-        "id" : "19",
-        "properties" : {
-          "structurizr.dsl.identifier" : "bc1cc0fe-e976-422e-89b4-b784d56026a1"
-        },
-        "sourceId" : "5",
-        "tags" : "Relationship"
-      }, {
-        "description" : "consumes orders",
-        "destinationId" : "13",
-        "id" : "20",
-        "linkedRelationshipId" : "19",
-        "sourceId" : "5"
-      }, {
-        "description" : "consumes PENDING orders",
-        "destinationId" : "16",
-        "id" : "21",
-        "properties" : {
-          "structurizr.dsl.identifier" : "d8f037a5-8cf7-493f-ac80-fff92fe97660"
-        },
-        "sourceId" : "5",
-        "tags" : "Relationship"
-      }, {
-        "description" : "consumes REQUESTED orders",
-        "destinationId" : "17",
-        "id" : "22",
-        "properties" : {
-          "structurizr.dsl.identifier" : "99845753-3673-4b34-8ea8-27f7acc14619"
-        },
-        "sourceId" : "5",
+        "sourceId" : "3",
         "tags" : "Relationship"
       } ],
       "tags" : "Element,Software System"
     }, {
       "containers" : [ {
         "documentation" : { },
-        "id" : "7",
+        "id" : "5",
         "name" : "API",
         "properties" : {
           "structurizr.dsl.identifier" : "mb.api"
         },
         "relationships" : [ {
-          "description" : "creation request(UID)",
-          "destinationId" : "5",
-          "id" : "8",
+          "description" : "cbs/orders/submit(UID)",
+          "destinationId" : "11",
+          "id" : "24",
           "properties" : {
-            "structurizr.dsl.identifier" : "64f7e98b-23f6-491e-836d-19724b2487f0"
+            "structurizr.dsl.identifier" : "e88a70cd-98b3-4d11-a833-bc2f736c4c38"
           },
-          "sourceId" : "7",
+          "sourceId" : "5",
           "tags" : "Relationship"
         }, {
+          "description" : "cbs/orders/submit(UID)",
+          "destinationId" : "8",
+          "id" : "25",
+          "linkedRelationshipId" : "24",
+          "sourceId" : "5"
+        }, {
           "description" : "notifies changes",
-          "destinationId" : "4",
-          "id" : "34",
+          "destinationId" : "3",
+          "id" : "32",
           "properties" : {
-            "structurizr.dsl.identifier" : "7bec02a5-98dc-4a9c-a61a-fdb403407ea7"
+            "structurizr.dsl.identifier" : "7616c956-b846-455c-a00c-3c80e20ed073"
           },
-          "sourceId" : "7",
+          "sourceId" : "5",
           "tags" : "Relationship"
         } ],
         "tags" : "Element,Container"
       } ],
       "documentation" : { },
-      "id" : "6",
+      "id" : "4",
       "location" : "Unspecified",
       "name" : "Application Gateway",
       "properties" : {
         "structurizr.dsl.identifier" : "mb"
       },
       "relationships" : [ {
-        "description" : "creation request(UID)",
-        "destinationId" : "5",
-        "id" : "9",
-        "linkedRelationshipId" : "8",
-        "sourceId" : "6"
-      }, {
-        "description" : "orders/list",
-        "destinationId" : "14",
+        "description" : "cbs/orders/submit(UID)",
+        "destinationId" : "11",
         "id" : "26",
-        "properties" : {
-          "structurizr.dsl.identifier" : "82492a4c-fa77-4400-a4f5-b2105ff99fe2"
-        },
-        "sourceId" : "6",
-        "tags" : "Relationship"
+        "linkedRelationshipId" : "24",
+        "sourceId" : "4"
       }, {
-        "description" : "orders/list",
-        "destinationId" : "13",
+        "description" : "cbs/orders/submit(UID)",
+        "destinationId" : "8",
         "id" : "27",
-        "linkedRelationshipId" : "26",
-        "sourceId" : "6"
+        "linkedRelationshipId" : "24",
+        "sourceId" : "4"
       }, {
         "description" : "notifies changes",
-        "destinationId" : "4",
-        "id" : "35",
-        "linkedRelationshipId" : "34",
-        "sourceId" : "6"
+        "destinationId" : "3",
+        "id" : "33",
+        "linkedRelationshipId" : "32",
+        "sourceId" : "4"
       } ],
       "tags" : "Element,Software System"
     }, {
       "containers" : [ {
         "documentation" : { },
-        "id" : "14",
+        "id" : "9",
+        "name" : "Message Broker",
+        "properties" : {
+          "structurizr.dsl.identifier" : "cbs.kafka"
+        },
+        "relationships" : [ {
+          "description" : "consumes orders",
+          "destinationId" : "12",
+          "id" : "17",
+          "properties" : {
+            "structurizr.dsl.identifier" : "7f90195b-615d-4a3f-bd83-22fcc483c231"
+          },
+          "sourceId" : "9",
+          "tags" : "Relationship"
+        }, {
+          "description" : "consumes PENDING orders",
+          "destinationId" : "13",
+          "id" : "18",
+          "properties" : {
+            "structurizr.dsl.identifier" : "7945179c-0b6e-4f34-85d2-344fb87b0dcb"
+          },
+          "sourceId" : "9",
+          "tags" : "Relationship"
+        }, {
+          "description" : "consumes REQUESTED orders",
+          "destinationId" : "14",
+          "id" : "19",
+          "properties" : {
+            "structurizr.dsl.identifier" : "2b940c7b-5382-4856-88d3-160b93bd5a01"
+          },
+          "sourceId" : "9",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container"
+      }, {
+        "documentation" : { },
+        "id" : "10",
+        "name" : "Portfolio Management System",
+        "properties" : {
+          "structurizr.dsl.identifier" : "cbs.pms"
+        },
+        "tags" : "Element,Container"
+      }, {
+        "documentation" : { },
+        "group" : "Investment Application",
+        "id" : "11",
         "name" : "API",
         "properties" : {
           "structurizr.dsl.identifier" : "cbs.api"
@@ -229,113 +203,135 @@
         "tags" : "Element,Container"
       }, {
         "documentation" : { },
-        "group" : "Investment Services",
-        "id" : "15",
+        "group" : "Investment Application",
+        "id" : "12",
         "name" : "Order Creator",
         "properties" : {
           "structurizr.dsl.identifier" : "cbs.creator-app"
         },
         "relationships" : [ {
           "description" : "persists orders",
-          "destinationId" : "18",
-          "id" : "23",
+          "destinationId" : "15",
+          "id" : "20",
           "properties" : {
-            "structurizr.dsl.identifier" : "675f6eae-cff5-4c9f-82da-b7ec950459b5"
+            "structurizr.dsl.identifier" : "9a857a94-85b4-4763-811d-8ebb808f108b"
           },
-          "sourceId" : "15",
+          "sourceId" : "12",
           "tags" : "Relationship"
         } ],
         "tags" : "Element,Container"
       }, {
         "documentation" : { },
-        "group" : "Investment Services",
-        "id" : "16",
+        "group" : "Investment Application",
+        "id" : "13",
         "name" : "Order Validator",
         "properties" : {
           "structurizr.dsl.identifier" : "cbs.validator-app"
         },
         "relationships" : [ {
           "description" : "PENDING -> REQUESTED*",
-          "destinationId" : "18",
-          "id" : "24",
+          "destinationId" : "15",
+          "id" : "21",
           "properties" : {
-            "structurizr.dsl.identifier" : "8975bd2a-f3d7-408e-9dcb-0b8cbdda10f0"
+            "structurizr.dsl.identifier" : "4655b001-f456-49e8-8e84-fb7435f98884"
           },
-          "sourceId" : "16",
+          "sourceId" : "13",
           "tags" : "Relationship"
         }, {
           "description" : "portfolio/reserveAmount",
-          "destinationId" : "3",
-          "id" : "39",
+          "destinationId" : "10",
+          "id" : "22",
           "properties" : {
-            "structurizr.dsl.identifier" : "212f0993-787f-4752-9de7-8d52b851f796"
+            "structurizr.dsl.identifier" : "57affbdc-9e13-4fa5-972a-ab5c6d86e541"
           },
-          "sourceId" : "16",
+          "sourceId" : "13",
           "tags" : "Relationship"
         } ],
         "tags" : "Element,Container"
       }, {
         "documentation" : { },
-        "group" : "Investment Services",
-        "id" : "17",
+        "group" : "Investment Application",
+        "id" : "14",
         "name" : "Order Placer",
         "properties" : {
           "structurizr.dsl.identifier" : "cbs.placer-app"
         },
         "relationships" : [ {
           "description" : "REQUESTED -> COMPLETED*",
-          "destinationId" : "18",
-          "id" : "25",
+          "destinationId" : "15",
+          "id" : "23",
           "properties" : {
-            "structurizr.dsl.identifier" : "879c2657-2c9c-43b3-a3d9-9d0d36879776"
+            "structurizr.dsl.identifier" : "9887d09f-a191-4bd9-af1d-641a96d1245f"
           },
-          "sourceId" : "17",
+          "sourceId" : "14",
           "tags" : "Relationship"
         }, {
           "description" : "placeOrder(UID)",
           "destinationId" : "2",
-          "id" : "37",
+          "id" : "35",
           "properties" : {
-            "structurizr.dsl.identifier" : "086071bc-59d4-45e2-b503-101093862ae7"
+            "structurizr.dsl.identifier" : "4354cac3-071e-4a5d-9012-b435d89a1094"
           },
-          "sourceId" : "17",
+          "sourceId" : "14",
           "tags" : "Relationship"
         } ],
         "tags" : "Element,Container"
       }, {
         "documentation" : { },
-        "id" : "18",
+        "id" : "15",
         "name" : "Order Database",
         "properties" : {
           "structurizr.dsl.identifier" : "cbs.db"
         },
         "relationships" : [ {
           "description" : "produces order changes",
-          "destinationId" : "5",
-          "id" : "30",
+          "destinationId" : "9",
+          "id" : "16",
           "properties" : {
-            "structurizr.dsl.identifier" : "b1a8a805-385e-4817-8914-281c814113c9"
+            "structurizr.dsl.identifier" : "30ae0b31-cbbf-4aba-8e50-52d04cdb1b55"
           },
-          "sourceId" : "18",
+          "sourceId" : "15",
           "tags" : "Relationship"
         } ],
         "tags" : "Element,Container"
       } ],
       "documentation" : {
+        "decisions" : [ {
+          "content" : "# 2. Prefer async communication\n\nDate: 2024-05-11\n\n## Status\n\nAccepted\n\n## Context\n\nWe also need to decouple event producing and event consumption in our systems,\nso load can be handled effectively and \ndifferent system's parts could be scaled independently.\n\n## Decision\n\nPrefer asynchronous communications between components of our system. \nUsing kafka, as message broker.\n\n## Consequences\n\n### Pros\nIt will be easier to test the components in isolation. \n\nWhen testing sending data, \ndeveloper can install a local instance of kafka, like Confluent-local. \n\nWhen testing data consumption, either\n- developer can install a local instance of kafka\n- we may create a REST interface accepting the same payloads, as corresponding events\n\n### Cons\n- Learning Curve may be steep for developers who are not used to event-driven systems\n",
+          "date" : "2024-05-11T00:00:00Z",
+          "format" : "Markdown",
+          "id" : "1",
+          "status" : "Accepted",
+          "title" : "Prefer async communication"
+        }, {
+          "content" : "# 2. Aim for horizontal scaling\n\nDate: 2024-05-11\n\n## Status\n\nAccepted\n\n## Context\n\nWe expect tenfold customer growth in the nearest future, \nso we should design system for scalability.  \n\n## Decision\n\nDesign applications in a cloud-native way, \nso that adding an instance/pod will allow better throughput.\nExpect that application will be deployed either on a kubernetes cluster \nor as lambda functions behind application gateway.\n\n## Consequences\n\nScalable application and effective use of resources.",
+          "date" : "2024-05-11T00:00:00Z",
+          "format" : "Markdown",
+          "id" : "2",
+          "status" : "Accepted",
+          "title" : "Aim for horizontal scaling"
+        }, {
+          "content" : "# 3. Use transactional outbox pattern to produce consistent events\n\nDate: 2024-05-11\n\n## Status\n\nAccepted\n\n## Context\n\nAs a bank, consistency of data is key. \nWe need to design to avoid manual reconciliation operations. \n\n## Decision\n\nWhen consistency between data in DB and produced events is required,\nwe should use \n[Transactional Outbox](https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/transactional-outbox.html) \nand [Change Data Capture](https://en.wikipedia.org/wiki/Change_data_capture) \npatterns leveraged by DB plugins like Debezium. \n\n## Consequences\n\nSpecial attention should be made to transaction management in java application,\nto avoid confusion between **save()** and **saveAndFlush()** operations,\nwhich will behave similarly when everything is fine, \nbut will produce different behaviour in the case of failure.",
+          "date" : "2024-05-11T00:00:00Z",
+          "format" : "Markdown",
+          "id" : "3",
+          "status" : "Accepted",
+          "title" : "Use transactional outbox pattern to produce consistent events"
+        } ],
         "sections" : [ {
-          "content" : "## How do we handle third-party integration?\n\n### Context\nWe have a fragile third-party system. \nThe API can be very slow and may sometime timeout \nor even be completely overwhelmed by our requests and go down.\n\n### Approach\n\nWe need to introduce some kind of **back-loop** between\nthird-party system and our systems.\n\nWe will **decorrelate**\nthe speed of our producers (CBS)\nfrom ingestion speed of the third-party system (EIS)\nby persisting the requests to EIS in a kafka topic.\n\nIn this way, we can send them to EIS asynchronously\nwith a rate EIS is able to manage. For this, we need to **control the outflow** of requests to the third-party system.\nWe can correlate number of requests sent to the number of errors we observe.\n\n- If we observe 0 errors during an interval of *T*, we will send up to *N_max* events to the third-party system;\n- If we observe more than *E_max* errors during an interval of *T*, we will **stop** outflow;\n- Otherwise, we will send a number of events inversely proportional to the number of errors, i.e. *E/E_max*.\n\nActual values for *N_max*, *E_max*, and *T* should be found through experimentation.\n\n### Implementation notes\nNotes",
+          "content" : "## Handling third-party integration?\n\n### Context\nWe have a fragile third-party system. \nThe API can be very slow and may sometime timeout \nor even be completely overwhelmed by our requests and go down.\n\n### Approach\n\nWe need to introduce some kind of **back-loop** between\nthird-party system and our systems.\n\nWe will **decorrelate**\nthe speed of our producers (CBS)\nfrom ingestion speed of the third-party system (EIS)\nby persisting the requests to EIS in a kafka topic.\n\nIn this way, we can send them to EIS asynchronously\nwith a rate EIS is able to manage. For this, we need to **control the outflow** of requests to the third-party system.\nWe can correlate number of requests sent to the number of errors we observe.\n\n- If we observe 0 errors during an interval of *T*, we will send up to *N_max* events to the third-party system;\n- If we observe more than *E_max* errors during an interval of *T*, we will **stop** outflow;\n- Otherwise, we will send a number of events inversely proportional to the number of errors, i.e. *E/E_max*.\n\nActual values for *N_max*, *E_max*, and *T* should be found through experimentation.\n\n### Implementation notes\nNotes",
           "filename" : "01-integrations.md",
           "format" : "Markdown",
           "order" : 1,
           "title" : ""
         }, {
-          "content" : "## Design for consistency\n\n### Context\nAs a bank, consistency is a key. \nWe need to avoid the need of manual reconciliation operations.\n\n### Approach\nWe will leverage database (RDMS) for managing data requiring high consistency.\nIn particular, when using RDMS with message broker, \nwe'll use Transaction Outbox pattern via Change Data Capture (CDC) plugins, like Debezium.\n\nWe will have a table for Orders and a table for OrderStatuses.\nOrders are immutable in CBS and identified by UID. \nOrderStatuses contains Order's UID, Status, Timestamp \nand additional information, like rejection reason.\n\n1) Mobile Client will generate an **UID** for the order \n2) submit it to rest API \n3) from where it will be sent to kafka topic: \"pending-creation\" when done and acknowledged to the client \n4) and then persisted to the DB. \n\nIn this way:\n- we minimize the time the connection will *remain open* from a mobile client to our system\n- we can handle creation in an *idempotent way*, ignoring duplicate submissions, if they arrive \n\nOrderStatuses are streamed to a kafka topic: \"order-statuses\", \nwhich then split using Kafka Streams by status code:\n- order-statuses-PENDING - consumed by Validator-App\n- order-statuses-REQUESTED - consumed by Placer-App\n- order-statuses-PLACED\n- order-statuses-COMPLETED\n- order-statuses-REJECTED\n\n",
+          "content" : "## Handling consistency and avoid duplication.\n\n### Context\nAs a bank, consistency is a key. \nWe need to avoid the need of manual reconciliation operations.\n\n### Approach\nWe will use\n1) RDBMS to store data which require high-consistency.\n2) Change Data Capture pattern, as explained [here](../adr/cbs/0003-use-transactional-outbox.md), \nwhen events must be sent in a way, which is consistent with the data in DB\n3) Idempotent requests/consumers, when possible\n\n### Examples\n#### Initial order submission by Mobile Client \n1) Client configures the order\n2) Mobile Client (MC) generates an **UID** for the order\n3) and submits it to Application Gateway API, which acknowledges the reception \n4) If Order with such **UUID** did not exist - *happy path*, \n   1) it is persisted into the DB \n   2) a notification is sent to the MC that order is created  \n5) If Order with such **UUID** exists - *potential retry of the request due to network conditions*, \n   1) Nothing to be done\n\nIn this way:\n- we can handle creation in an *idempotent way*, ignoring duplicate submissions, if they arrive\n- we minimize the time the connection will *remain open* from a MC to Application Gateway, \nthus reducing the risk of interruption\n\n#### Order updating\nOrder, as requested by Client, will be **immutable** in our model. \nFor state changes we will use *Event Sourcing* approach.\n\nIn the DB, there will be\n- a table Orders - for immutable Orders in CBS identified by UID \n- a table OrderStatuses - for status changes, containing Order's UID, Status, Timestamp and additional information, like rejection reason\n\nOperations team, as well as application itself,\nwill be able to reconstruct the Order state by replaying entries in OrderStatuses.  \n\nChanges in OrderStatuses will be streamed to kafka by a [DB plugin](/adr/cbs/0003-use-transactional-outbox.md), \nso they can be consumed by other services of our applications.\n\nMore specifically:  \n- changes to PENDING will be consumed by Validator-App\n- changes to REQUESTED will be consumed by Placer-App\n- all other changes will be sent to [notification sub-system](04-mobile-notifications.md)\n\nNote that to maintain high-consistency new entries of OrderStatuses\nmust be inserted using **saveAndFlush()**",
           "filename" : "02-consistency.md",
           "format" : "Markdown",
           "order" : 2,
           "title" : ""
         }, {
-          "content" : "## Notes on driving implementation\n\nSome notes\n",
+          "content" : "## Driving implementation\n\n### How to drive tech team into the implementation?\n### What instrumentation/strategy would you put in place?\n- Document interfaces with schemas in API Gateway.\n\n### Which consideration you would make to ensure the system can be maintained, evolved and operated at best?\n- Hire best people. Make them responsible for their decisions.\n- Put in place SLOs. Monitor the SLI. If the SLOs are not met, prioritise fixing the system.\n",
           "filename" : "03-driving-dev.md",
           "format" : "Markdown",
           "order" : 3,
@@ -348,52 +344,40 @@
           "title" : ""
         } ]
       },
-      "id" : "13",
+      "id" : "8",
       "location" : "Unspecified",
       "name" : "Core Banking System",
       "properties" : {
         "structurizr.dsl.identifier" : "cbs"
       },
       "relationships" : [ {
-        "description" : "produces order changes",
-        "destinationId" : "5",
-        "id" : "31",
-        "linkedRelationshipId" : "30",
-        "sourceId" : "13"
-      }, {
         "description" : "notifies changes",
-        "destinationId" : "7",
-        "id" : "32",
+        "destinationId" : "5",
+        "id" : "30",
         "properties" : {
-          "structurizr.dsl.identifier" : "db698eb6-843b-4f10-8276-e89adacae28c"
+          "structurizr.dsl.identifier" : "c25972fb-cb39-4786-9c27-d83e39fb086e"
         },
-        "sourceId" : "13",
+        "sourceId" : "8",
         "tags" : "Relationship"
       }, {
         "description" : "notifies changes",
-        "destinationId" : "6",
-        "id" : "33",
-        "linkedRelationshipId" : "32",
-        "sourceId" : "13"
+        "destinationId" : "4",
+        "id" : "31",
+        "linkedRelationshipId" : "30",
+        "sourceId" : "8"
       }, {
         "description" : "placeOrder(UID)",
         "destinationId" : "2",
-        "id" : "38",
-        "linkedRelationshipId" : "37",
-        "sourceId" : "13"
-      }, {
-        "description" : "portfolio/reserveAmount",
-        "destinationId" : "3",
-        "id" : "40",
-        "linkedRelationshipId" : "39",
-        "sourceId" : "13"
+        "id" : "36",
+        "linkedRelationshipId" : "35",
+        "sourceId" : "8"
       } ],
       "tags" : "Element,Software System"
     } ]
   },
   "name" : "Name",
   "properties" : {
-    "structurizr.dsl" : "d29ya3NwYWNlIHsKICAgICFpZGVudGlmaWVycyBoaWVyYXJjaGljYWwKICAgICFhZHJzIGFkcgoKICAgIG1vZGVsIHsKICAgICAgICB1c2VyID0gcGVyc29uICJVc2VyIiAiTW9iaWxlIENsaWVudCIKICAgICAgICBlaXMgPSBzb2Z0d2FyZVN5c3RlbSAiRXh0ZXJuYWwgSW52ZXN0bWVudCBTeXN0ZW0iCiAgICAgICAgcG1zID0gc29mdHdhcmVTeXN0ZW0gIlBvcnRmb2xpbyBNYW5hZ2VtZW50IFN5c3RlbSIKICAgICAgICBmY20gPSBzb2Z0d2FyZVN5c3RlbSAiRmlyZWJhc2UgQ2xvdWQgTWVzc2FnaW5nIgoKICAgICAgICBrYWZrYSA9IHNvZnR3YXJlU3lzdGVtICJNZXNzYWdlIEJyb2tlciIKCiAgICAgICAgbWIgPSBzb2Z0d2FyZVN5c3RlbSAiQXBwbGljYXRpb24gR2F0ZXdheSIgewogICAgICAgICAgICBhcGkgPSBjb250YWluZXIgIkFQSSIKICAgICAgICAgICAgYXBpIC0+IGthZmthICJjcmVhdGlvbiByZXF1ZXN0KFVJRCkiCgogICAgICAgICAgICB1c2VyIC0+IGFwaSAib3JkZXJzL2xpc3QiCiAgICAgICAgICAgIHVzZXIgLT4gYXBpICJvcmRlcnMvc3VibWl0KFVJRCkiCiAgICAgICAgfQoKICAgICAgICBjYnMgPSBzb2Z0d2FyZVN5c3RlbSAiQ29yZSBCYW5raW5nIFN5c3RlbSIgewogICAgICAgICAgICAhYWRycyBhZHIvY2JzCiAgICAgICAgICAgICFkb2NzIGRvY3MvY2JzCgogICAgICAgICAgICBhcGkgPSBjb250YWluZXIgIkFQSSIKICAgICAgICAgICAgZ3JvdXAgIkludmVzdG1lbnQgU2VydmljZXMiIHsKICAgICAgICAgICAgICAgIGNyZWF0b3ItYXBwID0gY29udGFpbmVyICJPcmRlciBDcmVhdG9yIgogICAgICAgICAgICAgICAgdmFsaWRhdG9yLWFwcCA9IGNvbnRhaW5lciAiT3JkZXIgVmFsaWRhdG9yIgogICAgICAgICAgICAgICAgcGxhY2VyLWFwcCA9IGNvbnRhaW5lciAiT3JkZXIgUGxhY2VyIgogICAgICAgICAgICB9CiAgICAgICAgICAgIGRiID0gY29udGFpbmVyICJPcmRlciBEYXRhYmFzZSIKCiAgICAgICAgICAgIGthZmthIC0+IGNyZWF0b3ItYXBwICJjb25zdW1lcyBvcmRlcnMiCiAgICAgICAgICAgIGthZmthIC0+IHZhbGlkYXRvci1hcHAgImNvbnN1bWVzIFBFTkRJTkcgb3JkZXJzIgogICAgICAgICAgICBrYWZrYSAtPiBwbGFjZXItYXBwICJjb25zdW1lcyBSRVFVRVNURUQgb3JkZXJzIgoKICAgICAgICAgICAgY3JlYXRvci1hcHAgLT4gZGIgInBlcnNpc3RzIG9yZGVycyIKICAgICAgICAgICAgdmFsaWRhdG9yLWFwcCAtPiBkYiAiUEVORElORyAtPiBSRVFVRVNURUQqIgogICAgICAgICAgICBwbGFjZXItYXBwIC0+IGRiICJSRVFVRVNURUQgLT4gQ09NUExFVEVEKiIKICAgICAgICB9CiAgICAgICAgbWIgLT4gY2JzLmFwaSAib3JkZXJzL2xpc3QiCiAgICAgICAgZWlzIC0+IGNicy5hcGkgIm9yZGVycy9vbkNvbXBsZXRlKFVJRCkiCgogICAgICAgIGNicy5kYiAtPiBrYWZrYSAicHJvZHVjZXMgb3JkZXIgY2hhbmdlcyIKICAgICAgICBjYnMgLT4gbWIuYXBpICJub3RpZmllcyBjaGFuZ2VzIgogICAgICAgIG1iLmFwaSAtPiBmY20gIm5vdGlmaWVzIGNoYW5nZXMiCiAgICAgICAgZmNtIC0+IHVzZXIgIm5vdGlmaWVzIGNoYW5nZXMiCgogICAgICAgIGNicy5wbGFjZXItYXBwIC0+IGVpcyAicGxhY2VPcmRlcihVSUQpIgogICAgICAgIGNicy52YWxpZGF0b3ItYXBwIC0+IHBtcyAicG9ydGZvbGlvL3Jlc2VydmVBbW91bnQiCiAgICB9CgogICAgdmlld3MgewogICAgICAgIHN5c3RlbUNvbnRleHQgbWIgIk92ZXJ2aWV3IiB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgICAgICBleGNsdWRlIGZjbQogICAgICAgICAgICBpbmNsdWRlIGVpcwogICAgICAgICAgICAjIGF1dG9sYXlvdXQgbHIKICAgICAgICB9CiAgICAgICAgY29udGFpbmVyIGNicyAiQ29yZSIgewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICAgICAgIyBhdXRvTGF5b3V0CiAgICAgICAgfQogICAgICAgIGR5bmFtaWMgY2JzIHsKICAgICAgICAgICAgdGl0bGUgIk1ha2luZyBJbnZlc3RtZW50IE9yZGVyIgogICAgICAgICAgICB1c2VyIC0+IG1iLmFwaSAib3JkZXJzL3N1Ym1pdChVSUQpIgogICAgICAgICAgICBtYi5hcGkgLT4ga2Fma2EgInBlbmRpbmcgY3JlYXRpb24iCiAgICAgICAgICAgIGthZmthIC0+IGNicy5jcmVhdG9yLWFwcCAiY29uc3VtZXMgQ1JFQVRFRCBldmVudCIKICAgICAgICAgICAgY2JzLmNyZWF0b3ItYXBwIC0+IGNicy5kYiAicGVyc2lzdHMgb3JkZXJzIgogICAgICAgICAgICBrYWZrYSAtPiBjYnMudmFsaWRhdG9yLWFwcCAiY29uc3VtZXMgUEVORElORyBldmVudCIKICAgICAgICAgICAgY2JzLnZhbGlkYXRvci1hcHAgLT4gY2JzLmRiICJQRU5ESU5HIC0+IFJFUVVFU1RFRCoiCiAgICAgICAgICAgIGthZmthIC0+IGNicy5wbGFjZXItYXBwICJjb25zdW1lcyBSRVFVRVNURUQgZXZlbnQiCiAgICAgICAgICAgIGNicy5wbGFjZXItYXBwIC0+IGNicy5kYiAiUkVRVUVTVEVEIC0+IENPTVBMRVRFRCoiCiAgICAgICAgICAgIGF1dG9MYXlvdXQgbHIKICAgICAgICB9CgogICAgICAgIHN0eWxlcyB7CiAgICAgICAgICAgIGVsZW1lbnQgIlNvZnR3YXJlIFN5c3RlbSIgewogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAjMTE2OGJkCiAgICAgICAgICAgICAgICBjb2xvciAjZmZmZmZmCiAgICAgICAgICAgIH0KICAgICAgICAgICAgZWxlbWVudCAiUGVyc29uIiB7CiAgICAgICAgICAgICAgICBzaGFwZSBwZXJzb24KICAgICAgICAgICAgICAgIGJhY2tncm91bmQgIzA4NDI3NgogICAgICAgICAgICAgICAgY29sb3IgI2ZmZmZmZgogICAgICAgICAgICB9CiAgICAgICAgfQogICAgfQoKfQo="
+    "structurizr.dsl" : "d29ya3NwYWNlIHsKICAgICFpZGVudGlmaWVycyBoaWVyYXJjaGljYWwKICAgICFhZHJzIGFkcgoKICAgIG1vZGVsIHsKICAgICAgICB1c2VyID0gcGVyc29uICJVc2VyIiAiTW9iaWxlIENsaWVudCIKICAgICAgICBlaXMgPSBzb2Z0d2FyZVN5c3RlbSAiRXh0ZXJuYWwgSW52ZXN0bWVudCBTeXN0ZW0iCiAgICAgICAgZmNtID0gc29mdHdhcmVTeXN0ZW0gIkZpcmViYXNlIENsb3VkIE1lc3NhZ2luZyIKCiAgICAgICAgbWIgPSBzb2Z0d2FyZVN5c3RlbSAiQXBwbGljYXRpb24gR2F0ZXdheSIgewogICAgICAgICAgICBhcGkgPSBjb250YWluZXIgIkFQSSIKCiAgICAgICAgICAgICMgdXNlciAtPiBhcGkgIm9yZGVycy9saXN0IgogICAgICAgICAgICB1c2VyIC0+IGFwaSAib3JkZXJzL3N1Ym1pdChVSUQpIgogICAgICAgIH0KCiAgICAgICAgY2JzID0gc29mdHdhcmVTeXN0ZW0gIkNvcmUgQmFua2luZyBTeXN0ZW0iIHsKICAgICAgICAgICAgIWFkcnMgYWRyL2NicwogICAgICAgICAgICAhZG9jcyBkb2NzL2NicwoKICAgICAgICAgICAga2Fma2EgPSBjb250YWluZXIgIk1lc3NhZ2UgQnJva2VyIgogICAgICAgICAgICBwbXMgPSBjb250YWluZXIgIlBvcnRmb2xpbyBNYW5hZ2VtZW50IFN5c3RlbSIKCiAgICAgICAgICAgIGdyb3VwICJJbnZlc3RtZW50IEFwcGxpY2F0aW9uIiB7CiAgICAgICAgICAgICAgICBhcGkgPSBjb250YWluZXIgIkFQSSIKICAgICAgICAgICAgICAgIGNyZWF0b3ItYXBwID0gY29udGFpbmVyICJPcmRlciBDcmVhdG9yIgogICAgICAgICAgICAgICAgdmFsaWRhdG9yLWFwcCA9IGNvbnRhaW5lciAiT3JkZXIgVmFsaWRhdG9yIgogICAgICAgICAgICAgICAgcGxhY2VyLWFwcCA9IGNvbnRhaW5lciAiT3JkZXIgUGxhY2VyIgogICAgICAgICAgICB9CiAgICAgICAgICAgIGRiID0gY29udGFpbmVyICJPcmRlciBEYXRhYmFzZSIKICAgICAgICAgICAgZGIgLT4ga2Fma2EgInByb2R1Y2VzIG9yZGVyIGNoYW5nZXMiCgogICAgICAgICAgICBrYWZrYSAtPiBjcmVhdG9yLWFwcCAiY29uc3VtZXMgb3JkZXJzIgogICAgICAgICAgICBrYWZrYSAtPiB2YWxpZGF0b3ItYXBwICJjb25zdW1lcyBQRU5ESU5HIG9yZGVycyIKICAgICAgICAgICAga2Fma2EgLT4gcGxhY2VyLWFwcCAiY29uc3VtZXMgUkVRVUVTVEVEIG9yZGVycyIKCiAgICAgICAgICAgIGNyZWF0b3ItYXBwIC0+IGRiICJwZXJzaXN0cyBvcmRlcnMiCiAgICAgICAgICAgIHZhbGlkYXRvci1hcHAgLT4gZGIgIlBFTkRJTkcgLT4gUkVRVUVTVEVEKiIKICAgICAgICAgICAgdmFsaWRhdG9yLWFwcCAtPiBwbXMgInBvcnRmb2xpby9yZXNlcnZlQW1vdW50IgoKICAgICAgICAgICAgcGxhY2VyLWFwcCAtPiBkYiAiUkVRVUVTVEVEIC0+IENPTVBMRVRFRCoiCiAgICAgICAgfQoKICAgICAgICAjIG1iLmFwaSAtPiBjYnMuYXBpICJjYnMvb3JkZXJzL2xpc3QiCiAgICAgICAgbWIuYXBpIC0+IGNicy5hcGkgImNicy9vcmRlcnMvc3VibWl0KFVJRCkiCiAgICAgICAgZWlzIC0+IG1iLmFwaSAib3JkZXJzL29uQ29tcGxldGUoVUlEKSIKCiAgICAgICAgY2JzIC0+IG1iLmFwaSAibm90aWZpZXMgY2hhbmdlcyIKICAgICAgICBtYi5hcGkgLT4gZmNtICJub3RpZmllcyBjaGFuZ2VzIgogICAgICAgIGZjbSAtPiB1c2VyICJub3RpZmllcyBjaGFuZ2VzIgoKICAgICAgICBjYnMucGxhY2VyLWFwcCAtPiBlaXMgInBsYWNlT3JkZXIoVUlEKSIKICAgIH0KCiAgICB2aWV3cyB7CiAgICAgICAgc3lzdGVtQ29udGV4dCBtYiAiT3ZlcnZpZXciIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgICAgIGV4Y2x1ZGUgZmNtCiAgICAgICAgICAgIGluY2x1ZGUgZWlzCiAgICAgICAgICAgICMgYXV0b2xheW91dCBscgogICAgICAgIH0KICAgICAgICBjb250YWluZXIgY2JzICJDb3JlIiB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgICAgICAjIGF1dG9MYXlvdXQKICAgICAgICB9CiAgICAgICAgZHluYW1pYyBjYnMgewogICAgICAgICAgICB0aXRsZSAiTWFraW5nIEludmVzdG1lbnQgT3JkZXIiCiAgICAgICAgICAgIHVzZXIgLT4gbWIuYXBpICJvcmRlcnMvc3VibWl0KFVJRCkiCiAgICAgICAgICAgICMgbWIuYXBpIC0+IGNicy5hcGkgImNicy9vcmRlcnMvc3VibWl0KFVJRCkiCiAgICAgICAgICAgICMga2Fma2EgLT4gY2JzLmNyZWF0b3ItYXBwICJjb25zdW1lcyBDUkVBVEVEIGV2ZW50IgogICAgICAgICAgICAjIGNicy5jcmVhdG9yLWFwcCAtPiBjYnMuZGIgInBlcnNpc3RzIG9yZGVycyIKICAgICAgICAgICAgI2thZmthIC0+IGNicy52YWxpZGF0b3ItYXBwICJjb25zdW1lcyBQRU5ESU5HIGV2ZW50IgogICAgICAgICAgICAjY2JzLnZhbGlkYXRvci1hcHAgLT4gY2JzLmRiICJQRU5ESU5HIC0+IFJFUVVFU1RFRCoiCiAgICAgICAgICAgICNrYWZrYSAtPiBjYnMucGxhY2VyLWFwcCAiY29uc3VtZXMgUkVRVUVTVEVEIGV2ZW50IgogICAgICAgICAgICAjY2JzLnBsYWNlci1hcHAgLT4gY2JzLmRiICJSRVFVRVNURUQgLT4gQ09NUExFVEVEKiIKICAgICAgICAgICAgYXV0b0xheW91dCBscgogICAgICAgIH0KCiAgICAgICAgc3R5bGVzIHsKICAgICAgICAgICAgZWxlbWVudCAiU29mdHdhcmUgU3lzdGVtIiB7CiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICMxMTY4YmQKICAgICAgICAgICAgICAgIGNvbG9yICNmZmZmZmYKICAgICAgICAgICAgfQogICAgICAgICAgICBlbGVtZW50ICJQZXJzb24iIHsKICAgICAgICAgICAgICAgIHNoYXBlIHBlcnNvbgogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAjMDg0Mjc2CiAgICAgICAgICAgICAgICBjb2xvciAjZmZmZmZmCiAgICAgICAgICAgIH0KICAgICAgICB9CiAgICB9Cgp9Cg=="
   },
   "views" : {
     "configuration" : {
@@ -416,120 +400,98 @@
     },
     "containerViews" : [ {
       "dimensions" : {
-        "height" : 3233,
-        "width" : 3220
+        "height" : 2480,
+        "width" : 3508
       },
       "elements" : [ {
         "id" : "2",
-        "x" : 1400,
-        "y" : 215
+        "x" : 1945,
+        "y" : 130
       }, {
-        "id" : "3",
-        "x" : 2015,
-        "y" : 210
+        "id" : "4",
+        "x" : 2695,
+        "y" : 130
       }, {
-        "id" : "5",
-        "x" : 165,
-        "y" : 1700
+        "id" : "9",
+        "x" : 1552,
+        "y" : 1307
       }, {
-        "id" : "6",
-        "x" : 180,
-        "y" : 755
+        "id" : "10",
+        "x" : 2677,
+        "y" : 1307
+      }, {
+        "id" : "11",
+        "x" : 2695,
+        "y" : 730
+      }, {
+        "id" : "12",
+        "x" : 445,
+        "y" : 730
+      }, {
+        "id" : "13",
+        "x" : 1195,
+        "y" : 730
       }, {
         "id" : "14",
-        "x" : 925,
-        "y" : 760
+        "x" : 1945,
+        "y" : 730
       }, {
         "id" : "15",
-        "x" : 1267,
-        "y" : 2155
-      }, {
-        "id" : "16",
-        "x" : 1267,
-        "y" : 1684
-      }, {
-        "id" : "17",
-        "x" : 1267,
-        "y" : 1213
-      }, {
-        "id" : "18",
-        "x" : 2070,
-        "y" : 2175
+        "x" : 752,
+        "y" : 1307
       } ],
       "externalSoftwareSystemBoundariesVisible" : false,
       "key" : "Core",
       "order" : 2,
-      "paperSize" : "A3_Portrait",
+      "paperSize" : "A4_Landscape",
       "relationships" : [ {
+        "id" : "16"
+      }, {
+        "id" : "17",
+        "vertices" : [ {
+          "x" : 1537,
+          "y" : 1242
+        } ]
+      }, {
+        "id" : "18",
+        "vertices" : [ {
+          "x" : 1757,
+          "y" : 1197
+        } ]
+      }, {
         "id" : "19",
         "vertices" : [ {
-          "x" : 790,
-          "y" : 2340
-        }, {
-          "x" : 1105,
-          "y" : 2345
+          "x" : 2192,
+          "y" : 1447
         } ]
       }, {
-        "id" : "21"
+        "id" : "20"
       }, {
-        "id" : "22",
+        "id" : "21",
         "vertices" : [ {
-          "x" : 790,
-          "y" : 1360
+          "x" : 972,
+          "y" : 1192
         } ]
       }, {
-        "id" : "23"
+        "id" : "22"
       }, {
-        "id" : "24"
-      }, {
-        "id" : "25",
+        "id" : "23",
         "vertices" : [ {
-          "x" : 2262,
-          "y" : 1767
+          "x" : 1112,
+          "y" : 1177
         } ]
       }, {
-        "id" : "26",
-        "vertices" : [ {
-          "x" : 770,
-          "y" : 900
-        } ]
+        "id" : "26"
       }, {
-        "id" : "28",
-        "vertices" : [ {
-          "x" : 1150,
-          "y" : 360
-        } ]
+        "id" : "29"
       }, {
-        "id" : "30",
-        "vertices" : [ {
-          "x" : 2245,
-          "y" : 2845
-        }, {
-          "x" : 540,
-          "y" : 2820
-        } ]
-      }, {
-        "id" : "37"
-      }, {
-        "id" : "39",
-        "vertices" : [ {
-          "x" : 1920,
-          "y" : 1792
-        }, {
-          "x" : 2250,
-          "y" : 1115
-        }, {
-          "x" : 2240,
-          "y" : 840
-        } ]
-      }, {
-        "id" : "9"
+        "id" : "35"
       } ],
-      "softwareSystemId" : "13"
+      "softwareSystemId" : "8"
     } ],
     "dynamicViews" : [ {
       "automaticLayout" : {
-        "applied" : false,
+        "applied" : true,
         "edgeSeparation" : 0,
         "implementation" : "Graphviz",
         "nodeSeparation" : 300,
@@ -537,35 +499,19 @@
         "rankSeparation" : 300,
         "vertices" : false
       },
-      "elementId" : "13",
+      "dimensions" : {
+        "height" : 841,
+        "width" : 1570
+      },
+      "elementId" : "8",
       "elements" : [ {
         "id" : "1",
-        "x" : 0,
-        "y" : 0
+        "x" : 199,
+        "y" : 200
       }, {
         "id" : "5",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "7",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "15",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "16",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "17",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "18",
-        "x" : 0,
-        "y" : 0
+        "x" : 899,
+        "y" : 250
       } ],
       "externalBoundariesVisible" : false,
       "generatedKey" : true,
@@ -573,43 +519,8 @@
       "order" : 3,
       "relationships" : [ {
         "description" : "orders/submit(UID)",
-        "id" : "12",
+        "id" : "6",
         "order" : "1",
-        "response" : false
-      }, {
-        "description" : "pending creation",
-        "id" : "8",
-        "order" : "2",
-        "response" : false
-      }, {
-        "description" : "consumes CREATED event",
-        "id" : "19",
-        "order" : "3",
-        "response" : false
-      }, {
-        "description" : "persists orders",
-        "id" : "23",
-        "order" : "4",
-        "response" : false
-      }, {
-        "description" : "consumes PENDING event",
-        "id" : "21",
-        "order" : "5",
-        "response" : false
-      }, {
-        "description" : "PENDING -> REQUESTED*",
-        "id" : "24",
-        "order" : "6",
-        "response" : false
-      }, {
-        "description" : "consumes REQUESTED event",
-        "id" : "22",
-        "order" : "7",
-        "response" : false
-      }, {
-        "description" : "REQUESTED -> COMPLETED*",
-        "id" : "25",
-        "order" : "8",
         "response" : false
       } ],
       "title" : "Making Investment Order"
@@ -625,18 +536,14 @@
         "y" : 200
       }, {
         "id" : "2",
-        "x" : 2399,
-        "y" : 250
+        "x" : 1650,
+        "y" : 685
       }, {
-        "id" : "5",
-        "x" : 1645,
-        "y" : 745
-      }, {
-        "id" : "6",
+        "id" : "4",
         "x" : 899,
         "y" : 250
       }, {
-        "id" : "13",
+        "id" : "8",
         "x" : 1649,
         "y" : 250
       } ],
@@ -644,14 +551,6 @@
       "key" : "Overview",
       "order" : 1,
       "relationships" : [ {
-        "id" : "11"
-      }, {
-        "id" : "20",
-        "vertices" : [ {
-          "x" : 1995,
-          "y" : 650
-        } ]
-      }, {
         "id" : "27",
         "vertices" : [ {
           "x" : 1499,
@@ -660,35 +559,25 @@
       }, {
         "id" : "29",
         "vertices" : [ {
-          "x" : 2249,
-          "y" : 250
+          "x" : 1120,
+          "y" : 820
         } ]
       }, {
         "id" : "31",
-        "vertices" : [ {
-          "x" : 1725,
-          "y" : 630
-        } ]
-      }, {
-        "id" : "33",
         "vertices" : [ {
           "x" : 1499,
           "y" : 250
         } ]
       }, {
-        "id" : "38",
+        "id" : "36",
         "vertices" : [ {
-          "x" : 2249,
-          "y" : 550
+          "x" : 2220,
+          "y" : 615
         } ]
       }, {
-        "id" : "9",
-        "vertices" : [ {
-          "x" : 1130,
-          "y" : 875
-        } ]
+        "id" : "7"
       } ],
-      "softwareSystemId" : "6"
+      "softwareSystemId" : "4"
     } ]
   }
 }

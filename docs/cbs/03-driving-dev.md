@@ -1,6 +1,9 @@
 ## Driving implementation
 
 ### How to drive tech team into the implementation?
+- Organize in agile way
+- Deliver increments in small sprints 
+
 ### What instrumentation/strategy would you put in place?
 - Document interfaces with schemas in API Gateway.
 

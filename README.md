@@ -24,6 +24,17 @@ of Core Banking System (CBS) part dedicated
 to order management for the Bank.
 ![Core Banking System](./img/02-cbs.svg)
 
+#### Assumptions 
+- Only Application Gateway is exposed to Internet
+- Only REST API of CSB is supposed to communicate with applications external to CBS
+- Communication between different components follow need to know principle, 
+in particular only protocols/ports required for the correct functioning are allowed. 
+- REST API of CSB is exposed behind a Load Balancer
+- All parts of CBS are deployed in a way that allows horizontal scaling
+- Components of IM (API, creator, validator, placer) initially may be separate modules
+of one deployment artifact. 
+They may be deployed as separate application for operational reasons
+
 ## Principles
 Our core implementation principles are:
 
