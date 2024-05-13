@@ -41,12 +41,12 @@ Our core implementation principles are:
 ### Resiliency and high-availability
 Our system must be high-available and resilient to errors, 
 for this we will prefer asynchronous communication between the components:
-[Prefer Async Communication](/adr/cbs/0001-prefer-async-communication.md)
+[Prefer Async Communication](/adr/cbs/0001-prefer-async-communication.md?v2)
 
 ### Reliability and scalability
 Our applications will be deployed into a Kubernetes cluster 
 and must be written in a such way that enabled horizontal scaling.
-[Aime for horizontal scaling](/adr/cbs/0002-aim-for-horizontal-scaling.md)
+[Aime for horizontal scaling](/adr/cbs/0002-aim-for-horizontal-scaling.md?v2)
 
 ### Data consistency
 Leverage RDMS to achieve high-data consistency.
