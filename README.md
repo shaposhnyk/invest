@@ -17,12 +17,12 @@ the Investment application, its principal services,
 interaction and high-level implementation details. 
 
 ### High-level overview of involved software systems
-![Overview](./img/01-overview.svg?v2)
+![Overview](./img/01-overview.svg?v3)
 
 Here we will be focusing on the Investment Services part 
 of Core Banking System (CBS) part dedicated 
 to order management for the Bank.
-![Core Banking System](./img/02-cbs.svg?v2)
+![Core Banking System](./img/02-cbs.svg?v3)
 
 #### Assumptions 
 - Only Application Gateway is exposed to Internet
