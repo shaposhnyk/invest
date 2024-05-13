@@ -17,12 +17,12 @@ the Investment application, its principal services,
 interaction and high-level implementation details. 
 
 ### High-level overview of involved software systems
-![Overview](./img/01-overview.svg)
+![Overview](./img/01-overview.svg?v2)
 
 Here we will be focusing on the Investment Services part 
 of Core Banking System (CBS) part dedicated 
 to order management for the Bank.
-![Core Banking System](./img/02-cbs.svg)
+![Core Banking System](./img/02-cbs.svg?v2)
 
 #### Assumptions 
 - Only Application Gateway is exposed to Internet
@@ -41,12 +41,12 @@ Our core implementation principles are:
 ### Resiliency and high-availability
 Our system must be high-available and resilient to errors, 
 for this we will prefer asynchronous communication between the components:
-[Prefer Async Communication](/adr/cbs/0001-prefer-async-communication.md?v2)
+[Prefer Async Communication](/adr/cbs/0001-prefer-async-communication.md)
 
 ### Reliability and scalability
 Our applications will be deployed into a Kubernetes cluster 
 and must be written in a such way that enabled horizontal scaling.
-[Aime for horizontal scaling](/adr/cbs/0002-aim-for-horizontal-scaling.md?v2)
+[Aime for horizontal scaling](/adr/cbs/0002-aim-for-horizontal-scaling.md)
 
 ### Data consistency
 Leverage RDMS to achieve high-data consistency.
