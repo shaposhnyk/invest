@@ -23,28 +23,28 @@ Our core design principles are:
 
 All Architectural decisions are recorded in this repository
 using Architecture Decision Records or *ADRs*,
-see [ADR folder](decisions/Core%20Banking%20System).
+see [ADR folder](adr/cbs).
 
 ### Resiliency and high-availability
 
 Our system must be high-available and resilient to errors,
 for this we prefer *asynchronous* communication between the components:
-[ADR 1 - Prefer Async Communication](decisions/Core%20Banking%20System#1)
+[ADR 1 - Prefer Async Communication](adr/cbs/0001-prefer-async-communication.md)
 
 ### Reliability and scalability
 
 Our applications are deployed into a Kubernetes cluster
 and must be written in a such way that enables horizontal scaling:
-[ADR 2 - Aime for horizontal scaling](decisions/Core%20Banking%20System#2)
+[ADR 2 - Aime for horizontal scaling](adr/cbs/0002-aim-for-horizontal-scaling.md)
 
 ### Data consistency
 
 Leverage RDMS to achieve high data consistency.
 
 When consistency between messaging and DB are required,
-prefer [ADR 3 - Transactional Outbox with Change Data Capture](decisions/Core%20Banking%20System#3) patterns. NB!
+prefer [ADR 3 - Transactional Outbox with Change Data Capture](adr/cbs/0003-use-transactional-outbox.md) patterns. NB!
 On implementation side it's important to correctly use transactions,
-see [ADR](decisions/Core%20Banking%20System#3) note for details.
+see [ADR](adr/cbs/0003-use-transactional-outbox.md) note for details.
 
 On the Message Broker side for critical flows **idempotent producers** should be enabled.
 
@@ -53,12 +53,12 @@ On application side consumers must be written in a way that makes them effective
 ## System Design
 ### High-level overview of involved software systems
 
-![Global Context](./img/01-overview.svg)
+![Global Context](img/01-overview.svg)
 
 ### Investement System Architecture
 We are focusing on the Investment part of Core Banking System (CBS) dedicated for order management, depicted on the
 following diagram:
-![Core Banking System](./img/02-cbs.svg)
+![Core Banking System](img/02-cbs.svg)
 
 #### Schema Description
 
@@ -76,7 +76,7 @@ We aim for at least 3 pods/instances for availability, which should be scaled up
   - it persists *order creation events* consumed from a dedicated topic. 
   - On initial stages of the project, we may prefer persisting orders via "asynchronous" REST call, 
   which eliminates the need of a dedicated queue and thus simpler to put in place, 
-  on the other hand, this couples us with the availability of the DB, which is in contradiction with [ADR 1 - Prefer Async Communication](decisions/Core%20Banking%20System#1)
+  on the other hand, this couples us with the availability of the DB, which is in contradiction with [ADR 1 - Prefer Async Communication](adr/cbs/0001-prefer-async-communication.md)
 - **Validator** component:
   - it consumes *PENDING-Orders* topic
   - it validates the data and creates a reservation in the PMS system. 
@@ -106,7 +106,7 @@ The response is either: OK, Not OK or Already exist (if Order with such UID alre
 
 Special considerations should be attributed to the following topics:
 
-1) [Handing third-party errors and unavailability](documentation/Core%20Banking%20System#how-to-handle-third-party-integration)
-2) [Handling consistency and avoiding order duplication](documentation/Core%20Banking%20System#how-to-handle-consistency-and-avoid-duplication)
-3) [Driving development team](documentation/Core%20Banking%20System#how-to-drive-implementation)
-4) [Notes on client notifications](documentation/Core%20Banking%20System#mobile-notification)
+1) [Handing third-party errors and unavailability](docs/cbs/01-integrations.md)
+2) [Handling consistency and avoiding order duplication](docs/cbs/02-consistency.md)
+3) [Driving development team](docs/cbs/03-consistency.md)
+4) [Notes on client notifications](docs/cbs/04-mobile-notifications.md)
