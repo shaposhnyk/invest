@@ -40,7 +40,9 @@ Our core implementation principles are:
 
 ### Architectural decisions are recorded
 
-All Architectural are recorded in this repository using Architecture Decision Records or *ADR*, see [ADR folder](decisions).
+All Architectural are recorded in this repository 
+using Architecture Decision Records or *ADR*, 
+see [ADR folder](adr/).
 
 ### Resiliency and high-availability
 
