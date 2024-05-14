@@ -1,6 +1,7 @@
-workspace {
+workspace "Investment System" {
     !identifiers hierarchical
     !adrs adr
+    !docs ./
 
     model {
         user = person "User" "Mobile Client"
@@ -43,7 +44,7 @@ workspace {
 
         # mb.api -> cbs.api "cbs/orders/list"
         mb.api -> cbs.api "cbs/orders/submit(UID)"
-        eis -> mb.api "orders/onComplete(UID)"
+        eis -> cbs.api "orders/onComplete(UID)"
 
         cbs -> mb.api "notifies changes"
         mb.api -> fcm "notifies changes"
@@ -62,18 +63,6 @@ workspace {
         container cbs "Core" {
             include *
             # autoLayout
-        }
-        dynamic cbs {
-            title "Making Investment Order"
-            user -> mb.api "orders/submit(UID)"
-            # mb.api -> cbs.api "cbs/orders/submit(UID)"
-            # kafka -> cbs.creator-app "consumes CREATED event"
-            # cbs.creator-app -> cbs.db "persists orders"
-            #kafka -> cbs.validator-app "consumes PENDING event"
-            #cbs.validator-app -> cbs.db "PENDING -> REQUESTED*"
-            #kafka -> cbs.placer-app "consumes REQUESTED event"
-            #cbs.placer-app -> cbs.db "REQUESTED -> COMPLETED*"
-            autoLayout lr
         }
 
         styles {
