@@ -28,7 +28,9 @@ workspace "Investment System" {
                 validator-app = container "Order Validator"
                 placer-app = container "Order Placer"
             }
-            db = container "Order Database"
+            db = container "Order Database" {
+                tags "Database"
+            }
             db -> kafka "produces order changes"
 
             kafka -> creator-app "consumes orders"
@@ -54,17 +56,6 @@ workspace "Investment System" {
     }
 
     views {
-        systemContext mb "Overview" {
-            include *
-            exclude fcm
-            include eis
-            # autolayout lr
-        }
-        container cbs "Core" {
-            include *
-            # autoLayout
-        }
-
         styles {
             element "Software System" {
                 background #1168bd
@@ -74,6 +65,9 @@ workspace "Investment System" {
                 shape person
                 background #084276
                 color #ffffff
+            }
+            element "Database" {
+                shape cylinder
             }
         }
     }
