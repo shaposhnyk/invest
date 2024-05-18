@@ -33,9 +33,15 @@ workspace "Investment System" {
             }
             db -> kafka "produces order changes"
 
-            kafka -> creator-app "consumes orders"
-            kafka -> validator-app "consumes PENDING orders"
-            kafka -> placer-app "consumes REQUESTED orders"
+            kafka -> creator-app "consumes orders" {
+                tags "EventConsumer"
+            }
+            kafka -> validator-app "consumes PENDING orders" {
+                tags "EventConsumer"
+            }
+            kafka -> placer-app "consumes REQUESTED orders" {
+                tags "EventConsumer"
+            }
 
             creator-app -> db "persists orders"
             validator-app -> db "PENDING -> REQUESTED*"
@@ -68,6 +74,12 @@ workspace "Investment System" {
             }
             element "Database" {
                 shape cylinder
+            }
+            relationship "Relationship" {
+                dashed false
+            }
+            relationship "EventConsumer" {
+                dashed true
             }
         }
     }
